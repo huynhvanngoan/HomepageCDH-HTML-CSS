@@ -1,6 +1,19 @@
 @font-face {
     font-family: "BTBeauSans";
     src: url("../fonts/BT-BeauSans.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "BTBeauSansBold";
+    src: url("../fonts/BT-BeauSans-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "BTBeauSansExtraBold";
+    src: url("../fonts/BT-BeauSans-ExtraBold.ttf");
+    font-weight: 800;
 }
 
 :root {
@@ -8,6 +21,7 @@
     --neutral-border: rgba(233, 233, 233, 1);
     --neutral-default: rgba(20, 20, 20, 1);
     --neutral-muted: rgba(159, 159, 159, 1);
+    --neutral-sub: rgba(66, 62, 62, 1);
 }
 
 * {
@@ -33,6 +47,7 @@ body {
     right: 0;
     z-index: 2;
     padding: 1rem 2rem;
+    /* height: 4.8rem; */
     border-bottom: 1px solid var(--neutral-border);
     background: white;
 }
@@ -129,7 +144,117 @@ body {
 }
 
 .main {
+    margin-top: 4.8rem;
     height: 100%;
+    padding: 6.2rem 0 1.6rem;
+    background: #fff;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: flex-end; */
+    gap: 2.8rem;
+}
+
+.hero-section__content {
+    margin: 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.hero-section__title {
+    font-size: 4.8rem;
+    font-weight: 500;
+    line-height: 6rem;
+    color: var(--neutral-default);
+    text-transform: capitalize;
+}
+
+.hero-section__title span {
+    display: block;
+    color: var(--primary-color);
+}
+
+.hero-section__cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.hero-section__description {
+    color: var(--neutral-sub);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+}
+
+.hero-section__button {
+    padding: 1.6rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    max-width: 16.5rem;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    border-bottom: 0.1rem solid var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2.1rem;
+    cursor: pointer;
+}
+
+.hero-section__button:hover {
+    color: var(--primary-color);
+}
+
+.hero-section__button svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.hero-section__button:hover svg path {
+    stroke: var(--primary-color);
+}
+
+.hero-section__marquee {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.hero-section__marquee-item {
+    display: flex;
+    gap: 2rem;
+}
+
+.hero-section__marquee-item h3 {
+    font-family: "BTBeauSansExtraBold", sans-serif;
+    display: inline-block;
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 10rem;
+    color: transparent;
+    -webkit-text-stroke-width: 0.15rem;
+    -webkit-text-stroke-color: rgba(20, 20, 20, 0.5);
+    text-stroke-color: rgba(20, 20, 20, 0.5);
+    text-transform: uppercase;
+    margin-right: 3rem;
+    letter-spacing: 0.5rem;
+}
+
+.hero-section__marquee-item h3:hover {
+    color: var(--primary-color);
+    -webkit-text-stroke-color: var(--primary-color);
+    text-stroke-color: var(--primary-color);
 }
 
 .footer {
@@ -258,6 +383,14 @@ body {
 }
 
 @media screen and (min-width: 64em) {
+    .header {
+        /* height: 8rem; */
+    }
+
+    .main {
+        margin-top: 8rem;
+    }
+
     .nav__list {
         display: flex;
     }
@@ -265,14 +398,38 @@ body {
     .nav__language {
         display: inline-block;
     }
-    
+
+    .hero-section__content {
+        flex-direction: row;
+        margin: 6rem 8rem;
+        gap: 14rem;
+    }
+
+    .hero-section__title {
+        max-width: 73.3rem;
+        width: 100%;
+        font-size: 8rem;
+        line-height: 10rem;
+    }
+
+    .hero-section__cta {
+        margin-top: 1.6rem;
+        max-width: 40.7rem;
+        width: 100%;
+        gap: 4.8rem;
+    }
+
+    .hero-section__description {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+    }
+
     .footer {
         padding: 12rem 8rem 8rem;
     }
 
     .footer__content {
         flex-direction: row;
-       
     }
     .footer__nav {
         grid-template-columns: 1fr 3fr;
